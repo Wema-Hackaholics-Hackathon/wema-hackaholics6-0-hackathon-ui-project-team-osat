@@ -1,0 +1,128 @@
+{
+  "tests": [
+    {
+      "test": "signup",
+      "timestamp": "2025-09-11T12:51:56.244969",
+      "correlation_id": "9f059df0-4010-4737-bac3-2eeb65031ad3",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "enroll_token": "2746c18b-872f-48d6-9295-58ddea92ccfc",
+        "message": "Signup initiated. OTP sent to email.",
+        "correlation_id": "963ebda6-a80a-4e44-964f-b81ef8cdd59c",
+        "next_step": "verify_email",
+        "otp_required": true
+      },
+      "success": true
+    },
+    {
+      "test": "verify_email",
+      "timestamp": "2025-09-11T12:51:57.112464",
+      "correlation_id": "f571eb23-4508-4202-8a3b-5e3b9a33898c",
+      "status_code": 400,
+      "response": {
+        "detail": {
+          "code": "invalid_otp",
+          "message": "Invalid OTP",
+          "correlation_id": "3952d3dd-29e9-48a2-b88e-a2ba03119d07"
+        }
+      },
+      "success": false
+    },
+    {
+      "test": "signup",
+      "timestamp": "2025-09-11T12:53:31.925554+00:00",
+      "correlation_id": "8bf1aef3-ab48-4ded-92e2-25f22228df76",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "enroll_token": "27281494-a317-4a62-941a-ef8206c538c7",
+        "message": "Signup initiated. OTP sent to email.",
+        "correlation_id": "8fac249b-d1fb-41c6-9ba7-ff8e5962d53a",
+        "next_step": "verify_email",
+        "otp_required": true
+      },
+      "success": true
+    },
+    {
+      "test": "verify_email",
+      "timestamp": "2025-09-11T12:53:34.073587+00:00",
+      "correlation_id": "b7cb8106-270e-4b82-999b-f801db8452ca",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "message": "Email verified and account activated",
+        "correlation_id": "0c5cb77d-eb96-4a3a-8cbe-a11ac451df59"
+      },
+      "success": true
+    },
+    {
+      "test": "register_device",
+      "timestamp": "2025-09-11T12:53:36.258357+00:00",
+      "correlation_id": "5e080aba-f3f0-4f57-bcc6-ec3f85d52db9",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "device_id": "7bf86c24-605c-4aac-a645-c0608c94456f",
+        "message": "Device registered successfully",
+        "correlation_id": "f295067f-e31d-47ce-bf4b-f6ed79c87b06"
+      },
+      "success": true
+    },
+    {
+      "test": "signup",
+      "timestamp": "2025-09-11T12:55:41.460585+00:00",
+      "correlation_id": "805cf6e6-a45b-4520-8f4e-228d9cf9462a",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "enroll_token": "7739eff5-db75-4a15-a0dc-5cc89333e03c",
+        "message": "Signup initiated. OTP sent to email.",
+        "correlation_id": "bd5f7b3f-5858-4e8f-b459-a2f266511eca",
+        "next_step": "verify_email",
+        "otp_required": true
+      },
+      "success": true
+    },
+    {
+      "test": "verify_email",
+      "timestamp": "2025-09-11T12:55:43.647859+00:00",
+      "correlation_id": "3839a47d-fc92-45f7-b092-e8d1a60e1083",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "message": "Email verified and account activated",
+        "correlation_id": "b7937320-9973-4ca6-8d55-27ebef57ec52"
+      },
+      "success": true
+    },
+    {
+      "test": "register_device",
+      "timestamp": "2025-09-11T12:55:45.589341+00:00",
+      "correlation_id": "86943ad3-e7ed-4517-978d-c998ac81074a",
+      "status_code": 200,
+      "response": {
+        "success": true,
+        "device_id": "2e8edbd0-faee-413c-ab4e-4e700386f7ed",
+        "message": "Device registered successfully",
+        "correlation_id": "535c2bcd-6167-4ccb-a344-f13b7d0685db"
+      },
+      "success": true
+    },
+    {
+      "test": "login",
+      "timestamp": "2025-09-11T12:55:55.805512+00:00",
+      "correlation_id": "4e8e9552-19c9-4fb0-89d3-80c1e12b5b52",
+      "status_code": 200,
+      "response": {
+        "success": false,
+        "stepup_required": true,
+        "stepup_method": "email_otp",
+        "risk_score": 45,
+        "correlation_id": "f681e1da-d99b-4481-8053-fd14448594e1",
+        "message": "Step-up authentication required"
+      },
+      "success": true
+    }
+  ]
+}
