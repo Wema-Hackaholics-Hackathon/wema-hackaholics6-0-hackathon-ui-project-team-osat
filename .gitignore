@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.env
+*.pem  # Or specific: private_key.pem, but commit public if needed
+venv/
+.DS_Store
+test_results.json  # If sensitive
+# Virtual env
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+/.env
+# Keys and secrets (don't commit these)
+private_key.pem
+public_key.pem
+jwt_private_key.pem
+saved_models/*.joblib  # Commit dummy models if needed, but not trained ones
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
