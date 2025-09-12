@@ -228,13 +228,14 @@ npm run dev
 
 ## 🔐 Risk Levels & Security Triggers
 
-| Risk Score | Trigger Examples                          | System Response             | User Experience             | Security Actions               |
-|------------|-------------------------------------------|------------------------------|-----------------------------|--------------------------------|
-| **0–30**   | Known device, same location, normal typing | Issue 4h JWT                 | Silent login + “Trusted” badge | Standard session               |
-| **31–60**  | New Wi-Fi, higher RTT, slight behavior diff | Require OTP + 30m JWT        | Modal OTP prompt            | Step-up auth, enhanced logging |
-| **61–100** | New device + foreign IP + erratic behavior  | Block login attempt          | Blocked screen + support CTA | Revoke sessions, admin alert   |
+| Risk Score | Bucket | Examples                       | Response      | User Experience | Security Actions |
+| ---------- | ------ | ------------------------------ | ------------- | --------------- | ---------------- |
+| 0–30       | Normal | Known device, same IP          | 4h JWT        | Silent login    | Standard session |
+| 31–60      | Risk C | New device, odd hours          | OTP + 30m JWT | OTP prompt      | Step-up, logging |
+| 61–80      | Risk A | New location, sensitive action | Block action  | MFA or warning  | Restrict, alert  |
+| 81–100     | Risk B | Foreign login, anomalies       | Block login   | Blocked screen  | Revoke, alert    |
 
-> ⚠️ **Unauthorized attempts** (invalid sig, tampered token, brute force) always trigger **≥ Medium Risk** and enforce step-up or block.
+⚠️ Unauthorized access attempts (failed login, invalid signature, tampered token) always trigger **at least Medium Risk** and enforce step-up verification.  
 
 ---
 
@@ -249,14 +250,5 @@ Try these in your local or live environment:
 
 ---
 
-## 📜 License
-
-MIT © 2025 Coreshield Team  
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies.
-
----
-
-> 💡 **Tip**: Star this repo if you found it useful! Contributions welcome.
-```
-
---- 
+## 📜 License  
+MIT License — feel free to use, modify, and share.  
